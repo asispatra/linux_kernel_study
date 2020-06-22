@@ -4,4 +4,4 @@ USER asis
 WORKDIR /home/asis
 RUN git clone https://github.com/parthsl/schbench && cd schbench/schbench && make
 #CMD ["schbench/schbench/schbench"]
-CMD [ "/bin/bash" ]
+CMD [ "sleep", "infinity" ]
