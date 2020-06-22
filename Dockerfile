@@ -1,6 +1,8 @@
-FROM registry.redhat.io/rhel8/httpd-24
+FROM registry.access.redhat.com/ubi8/s2i-base
 RUN yum install sudo -y
-RUN usermod -aG wheel default
-USER default
-CMD ["/usr/bin/run-httpd"]
+RUN useradd -ms /bin/bash asis
+RUN usermod -aG wheel asis
+USER asis
+WORKDIR /home/asis
+CMD ["bash"]
 
