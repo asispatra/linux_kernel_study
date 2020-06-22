@@ -1,7 +1,6 @@
-FROM registry.access.redhat.com/ubi8/s2i-base
-RUN useradd -ms /bin/bash asis
-USER asis
-WORKDIR /home/asis
-RUN git clone https://github.com/parthsl/schbench && cd schbench/schbench && make
-CMD ["schbench/schbench/schbench"]
+FROM registry.redhat.io/rhel8/httpd-24
+RUN yum install sudo -y
+RUN usermod -aG wheel default
+USER default
+CMD ["/usr/bin/run-httpd"]
 
