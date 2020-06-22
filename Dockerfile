@@ -6,6 +6,6 @@ RUN yum install -y sudo && \
     chmod 0440 /etc/sudoers.d/user
 
 #RUN su - user -c "touch mine"
-
-CMD ["su", "-", "user", "-c", "/bin/bash"]
+USER user
+CMD ["/bin/bash"]
 
