@@ -7,5 +7,5 @@ RUN yum install -y sudo && \
 
 #RUN su - user -c "touch mine"
 USER user
-CMD ["/bin/bash"]
+CMD ["while true ; do echo Hello ; sleep 1; done"]
 
